@@ -2,15 +2,219 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Berkay Kadayıf Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berkay Kadayıf - Web Developer & Video Editor</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-    h1 { color: #333; }
-    p { font-size: 1.2em; color: #666; }
+    /* Reset ve temel ayarlar */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #1f2024, #3a3c43);
+      color: #eee;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    a {
+      color: #61dafb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #21a1f1;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 900px;
+      width: 100%;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #a0a0a0;
+      font-style: italic;
+    }
+    main {
+      max-width: 900px;
+      width: 100%;
+      background: #2b2d35;
+      border-radius: 10px;
+      padding: 30px 40px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #61dafb;
+      padding-bottom: 5px;
+    }
+    ul.skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    ul.skills-list li {
+      background: #444850;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: inset 0 0 10px #00000080;
+      transition: background-color 0.3s ease;
+      cursor: default;
+    }
+    ul.skills-list li:hover {
+      background: #61dafb;
+      color: #1a1a1a;
+      box-shadow: none;
+    }
+    section.blog-posts article {
+      background: #3c3f48;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    section.blog-posts article:hover {
+      transform: translateY(-5px);
+      background: #61dafb;
+      color: #1a1a1a;
+    }
+    article h3 {
+      margin-bottom: 10px;
+    }
+    article p {
+      font-size: 1rem;
+      color: #d0d0d0;
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      user-select: none;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      main {
+        padding: 20px;
+      }
+      ul.skills-list {
+        gap: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Merhaba, ben Berkay!</h1>
-  <p>Web Tasarımcı & Video Editör</p>
+
+  <header>
+    <h1>Berkay Kadayıf</h1>
+    <p>Junior Web Developer & Video Editor</p>
+  </header>
+
+  <main>
+
+    <section class="about-me">
+      <h2>Hakkımda</h2>
+      <p>
+        2024 Bilgisayar Programcılığı mezunuyum. Web geliştirme, video edit ve tasarım alanlarında yeteneklerimi geliştiriyorum.  
+        Yeni projeler, freelance işler ve iş birliklerine açığım.  
+        Kendimi sürekli geliştirmeye ve öğrenmeye devam ediyorum.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Yeteneklerim</h2>
+      <ul class="skills-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript (ES6+)</li>
+        <li>React (temel)</li>
+        <li>Adobe Premiere Pro</li>
+        <li>Video Editing</li>
+        <li>Responsive Design</li>
+        <li>Git & GitHub</li>
+      </ul>
+    </section>
+
+    <section class="blog-posts">
+      <h2>Blog Yazılarım</h2>
+
+      <article tabindex="0" onclick="openPost('post1')" onkeypress="if(event.key==='Enter'){openPost('post1')}">
+        <h3>İlk Projem: Kişisel Portföy Sitesi</h3>
+        <p>Bu yazıda, kendi portföy sitemi nasıl yaptığımı anlattım ve GitHub Pages kullanımı üzerine bilgiler paylaştım.</p>
+      </article>
+
+      <article tabindex="0" onclick="openPost('post2')" onkeypress="if(event.key==='Enter'){openPost('post2')}">
+        <h3>JavaScript ile Basit Oyun Geliştirme</h3>
+        <p>JS ile oyun yapmaya giriş ve temel teknikler üzerine kısa bir blog yazısı.</p>
+      </article>
+
+      <article tabindex="0" onclick="openPost('post3')" onkeypress="if(event.key==='Enter'){openPost('post3')}">
+        <h3>Video Edit İçin En İyi Araçlar</h3>
+        <p>Video düzenleme alanında kullandığım en sevdiğim programlar ve ipuçları.</p>
+      </article>
+
+    </section>
+
+    <section class="contact">
+      <h2>İletişim</h2>
+      <p>E-posta: <a href="mailto:seninemail@example.com">seninemail@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/berkaykadayif" target="_blank" rel="noopener">linkedin.com/in/berkaykadayif</a></p>
+      <p>Fiverr: <a href="https://fiverr.com/berkaykadayif" target="_blank" rel="noopener">fiverr.com/berkaykadayif</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Berkay Kadayıf. Tüm hakları saklıdır.
+  </footer>
+
+  <script>
+    function openPost(id) {
+      const posts = {
+        post1: {
+          title: "İlk Projem: Kişisel Portföy Sitesi",
+          content: "Bu yazıda, kendi portföy sitemi nasıl yaptığımı anlattım ve GitHub Pages kullanımı üzerine bilgiler paylaştım. HTML, CSS ve JavaScript kullanarak yaptığım projelerle ilgili ipuçları içeriyor."
+        },
+        post2: {
+          title: "JavaScript ile Basit Oyun Geliştirme",
+          content: "JavaScript kullanarak nasıl basit bir oyun yapabileceğini anlatan temel tekniklerin bulunduğu yazı."
+        },
+        post3: {
+          title: "Video Edit İçin En İyi Araçlar",
+          content: "Video düzenleme alanında kullandığım en sevdiğim programlar ve işimi kolaylaştıran ipuçlarını paylaştım."
+        }
+      };
+      const post = posts[id];
+      if (!post) return alert("Blog yazısı bulunamadı.");
+      alert(post.title + "\n\n" + post.content);
+    }
+  </script>
+
 </body>
 </html>
